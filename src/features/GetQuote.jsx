@@ -5,7 +5,6 @@ function GetQuote() {
     .then(response => response.json())
     .then(
         d => {
-            console.log(d)
             document.getElementById('content').innerText = d.content
             document.getElementById('author').innerText = d.author
             document.getElementById('tag').innerText = d.tags[0]
