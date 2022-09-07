@@ -1,3 +1,9 @@
+# Machine Random Quote
+
+This project was coded to get exp in local development.
+I already coded this in codepen: https://codepen.io/im-victor-mendez/pen/VwXLeZo
+I took around 3 hours in the same day.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
