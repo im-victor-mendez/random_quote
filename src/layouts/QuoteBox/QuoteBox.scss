@@ -1,0 +1,32 @@
+#quote-box {
+    background-color: white;
+
+    max-width:  50%;
+    max-height: 70%;
+    padding: 2rem;
+
+    overflow: auto;
+
+    #author {
+        width: 100%;
+        text-align: end;
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #tweet-quote {
+            text-decoration: none;
+        }
+
+        #new-quote {
+            color: white;
+            cursor: pointer;
+
+            padding: 1rem;
+            border: 0;
+        }
+    }
+}
