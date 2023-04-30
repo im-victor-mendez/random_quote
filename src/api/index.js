@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const url = 'https://quotes15.p.rapidapi.com/quotes/random/'
+const apiPrefix = `https://quotes15.p.rapidapi.com/`
+const apiEndpoint = `quotes/random/`
+const url = `${apiPrefix}${apiEndpoint}`
 
 const apiKey = import.meta.env.VITE_API_KEY
 const apiHost = import.meta.env.VITE_API_HOST
@@ -18,6 +20,7 @@ export async function getQuote() {
         const response = await axios.request(options);
         return response
     } catch (error) {
+        console.error(error)
         return error
     }
 }
