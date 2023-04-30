@@ -1,4 +1,5 @@
 import './QuoteBox.scss'
+import React from 'react'
 
 function QuoteBox({ quote, tweet, color, error, newQuote }) {
     if (error) return (

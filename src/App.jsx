@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
+import React from 'react'
 import QuoteBox from "./layouts/QuoteBox/QuoteBox"
 import { getQuote } from "./api";
 import { getColor } from "./functions/colors";
