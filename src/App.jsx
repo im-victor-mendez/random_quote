@@ -1,4 +1,3 @@
-import './App.css'
 import QuoteBox from "./layouts/QuoteBox/QuoteBox"
 
 function App() {
