@@ -1,4 +1,5 @@
 import { apiOptions, apiUrl } from ".";
+import { getRandomColor } from "../constants/colors";
 
 export async function getQuote() {
     try {
@@ -11,7 +12,7 @@ export async function getQuote() {
     }
 }
 
-export function newQuote(setQuote, setAuthor) {
+export function newQuote({ setQuote, setAuthor, setColor }) {
     getQuote()
     .then(res => {
       const { id, originator, language_code, content, url, tags } = res
@@ -22,5 +23,6 @@ export function newQuote(setQuote, setAuthor) {
         
       setQuote(content)
       setAuthor(name)
+      setColor(getRandomColor())
     })
 }

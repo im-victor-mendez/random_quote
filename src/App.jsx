@@ -1,3 +1,4 @@
+import './App.scss'
 import { useEffect, useState } from "react"
 import QuoteBox from "./layouts/QuoteBox/QuoteBox"
 import { newQuote } from "./api/quotes"
@@ -5,15 +6,21 @@ import { newQuote } from "./api/quotes"
 function App() {
   const [quote, setQuote] = useState()
   const [author, setAuthor] = useState()
-  const settingNewQuote = () => newQuote(setQuote, setAuthor)
+  const [color, setColor] = useState()
+  const settingNewQuote = () => newQuote({ setQuote, setAuthor, setColor })
 
   useEffect(() => {
     settingNewQuote()
   }, [])
 
+  const style = {
+    backgroundColor: color,
+    color
+  }
+
   return (
-    <main id="App">
-      <QuoteBox quote={quote} author={author} newQuote={settingNewQuote} />
+    <main id="App" style={style} >
+      {quote && <QuoteBox quote={quote} author={author} newQuote={settingNewQuote} color={color} />}
     </main>
   )
 }
