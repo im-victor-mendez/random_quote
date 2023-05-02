@@ -10,3 +10,17 @@ export async function getQuote() {
         return error
     }
 }
+
+export function newQuote(setQuote, setAuthor) {
+    getQuote()
+    .then(res => {
+      const { id, originator, language_code, content, url, tags } = res
+      const { description, master_id, name } = originator
+      const originatorId = originator.id,
+            originatorLanguageCode = originator.language_code,
+            originatorUrl = originator.url
+        
+      setQuote(content)
+      setAuthor(name)
+    })
+}
