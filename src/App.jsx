@@ -2,6 +2,8 @@ import './App.scss'
 import { useEffect, useState } from "react"
 import QuoteBox from "./layouts/QuoteBox/QuoteBox"
 import { newQuote } from "./api/quotes"
+import { getRandomColor } from './constants/colors'
+import ReactLoading from "react-loading";
 
 function App() {
   const [quote, setQuote] = useState()
@@ -10,6 +12,7 @@ function App() {
   const settingNewQuote = () => newQuote({ setQuote, setAuthor, setColor })
 
   useEffect(() => {
+    setColor(getRandomColor())
     settingNewQuote()
   }, [])
 
@@ -20,7 +23,19 @@ function App() {
 
   return (
     <main id="App" style={style} >
-      {quote && <QuoteBox quote={quote} author={author} newQuote={settingNewQuote} color={color} />}
+      {
+        quote ?
+        <QuoteBox
+          quote={quote}
+          author={author}
+          newQuote={settingNewQuote}
+          color={color}
+        /> :
+        <ReactLoading
+          color='#fff'
+          type='spin'
+        />
+      }
     </main>
   )
 }
