@@ -5,15 +5,15 @@ import { newQuote } from "./api/quotes"
 function App() {
   const [quote, setQuote] = useState()
   const [author, setAuthor] = useState()
-  const newQuoteFunction = () => newQuote(setQuote, setAuthor)
+  const settingNewQuote = () => newQuote(setQuote, setAuthor)
 
   useEffect(() => {
-    newQuoteFunction()
+    settingNewQuote()
   }, [])
 
   return (
     <main id="App">
-      <QuoteBox quote={quote} author={author} newQuote={newQuoteFunction} />
+      <QuoteBox quote={quote} author={author} newQuote={settingNewQuote} />
     </main>
   )
 }
